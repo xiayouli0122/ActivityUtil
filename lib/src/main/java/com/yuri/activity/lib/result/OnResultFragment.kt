@@ -24,7 +24,7 @@ class OnResultFragment : Fragment() {
         return subject.doOnSubscribe { startActivityForResult(intent, requestCode) }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         //rxjava方式的处理
         val subject = mSubjects.get(requestCode)

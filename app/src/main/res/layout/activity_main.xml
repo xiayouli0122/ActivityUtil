@@ -52,4 +52,13 @@
         android:textAllCaps="false"
         />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        android:text="FragmentTestActivity"
+        android:textAllCaps="false"
+        />
+
 </android.support.constraint.ConstraintLayout>

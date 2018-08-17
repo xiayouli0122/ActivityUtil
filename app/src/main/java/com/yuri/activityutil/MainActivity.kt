@@ -1,5 +1,6 @@
 package com.yuri.activityutil
 
+import android.app.Fragment
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -26,9 +27,9 @@ class MainActivity : AppCompatActivity() {
                     .startResult()
                     .filter(OnResultFilterFunc())
                     .subscribe {
-                        val data = it.data
-                        val text = data?.getStringExtra("result")
-                        textViewResult.text = text
+//                        val data = it.data
+//                        val text = data?.getStringExtra("result")
+//                        textViewResult.text = text
                     }
 
         }
@@ -59,6 +60,12 @@ class MainActivity : AppCompatActivity() {
                         textViewResult.text = text
                     }
 
+        }
+
+        button5.setOnClickListener {
+            ActivityUtil.with(MainActivity@this)
+                    .activity(FragmentTestActivity::class.java)
+                    .start()
         }
     }
 }

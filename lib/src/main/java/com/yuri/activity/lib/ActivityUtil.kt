@@ -23,10 +23,16 @@ object ActivityUtil {
         return DefaultRequest(ContextTarget(context))
     }
 
+    /**
+     * @param fragment android.app.Fragment
+     */
     fun with(fragment: android.app.Fragment): DefaultRequest {
         return DefaultRequest(FragmentTarget(fragment))
     }
 
+    /**
+     * @param fragment android.support.v4.app.Fragment
+     */
     fun with(fragment: Fragment): DefaultRequest {
         return DefaultRequest(SupportFragmentTarget(fragment))
     }
