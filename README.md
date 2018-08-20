@@ -18,16 +18,16 @@ dependencies {
 简单的startActivity跳转示例
 ```
 ActivityUtil.with(MainActivity@this)
-                    .activity(TestActivity::class.java) //跳转目标
-                    .start()
+        .activity(TestActivity::class.java) //跳转目标
+        .start()
 ```
 
 带参数的startActivity跳转示例
 ```
  ActivityUtil.with(MainActivity@this)
-                    .activity(TestActivity::class.java) //跳转目标
-                    .withString("text", "startActivity")
-                    .start()
+        .activity(TestActivity::class.java) //跳转目标
+        .withString("text", "startActivity")
+        .start()
 ```
 
 简单的startActivityForResult跳转示例
