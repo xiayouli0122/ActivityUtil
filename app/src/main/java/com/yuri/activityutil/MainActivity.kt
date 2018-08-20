@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
                     .startResult()
                     .filter(OnResultFilterFunc())
                     .subscribe {
-//                        val data = it.data
-//                        val text = data?.getStringExtra("result")
-//                        textViewResult.text = text
+                        val data = it.data
+                        val text = data?.getStringExtra("result")
+                        textViewResult.text = text
                     }
 
         }
