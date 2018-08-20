@@ -37,7 +37,7 @@ ActivityUtil.with(MainActivity@this)
         .activity(TestActivity::class.java)
         .withString("text", "startActivityForResult")
         .startResult()
-        .filter(OnResultFilterFunc())
+        .filter(OnResultFilterFunc()) //过滤RESULT_CANCEL，只有RESULT_OK的才会回调
         .subscribe {
             val data = it.data
             val text = data?.getStringExtra("result")
@@ -63,5 +63,24 @@ ActivityUtil.with(MainActivity@this)
             val data = it.data
             val text = data?.getStringExtra("result")
             textViewResult.text = text
+        }
+```
+
+默认startActivityForResult是可以不需要设置requestCode的、
+
+如果需要可以这样做
+```
+ActivityUtil.with(MainActivity@this)
+        .activity(TestActivity::class.java)
+        .requestCode(123)
+        .withString("text", "startActivityForResult")
+        .startResult()
+        .filter(OnResultFilterFunc())
+        .subscribe {
+            if (it.requestCode == 123) {
+                val data = it.data
+                val text = data?.getStringExtra("result")
+                textViewResult.text = text
+            }
         }
 ```

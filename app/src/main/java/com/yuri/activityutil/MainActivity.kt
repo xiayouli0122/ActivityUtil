@@ -23,13 +23,16 @@ class MainActivity : AppCompatActivity() {
         button2.setOnClickListener {
             ActivityUtil.with(MainActivity@this)
                     .activity(TestActivity::class.java)
+                    .requestCode(123)
                     .withString("text", "startActivityForResult")
                     .startResult()
                     .filter(OnResultFilterFunc())
                     .subscribe {
-                        val data = it.data
-                        val text = data?.getStringExtra("result")
-                        textViewResult.text = text
+                        if (it.requestCode == 123) {
+                            val data = it.data
+                            val text = data?.getStringExtra("result")
+                            textViewResult.text = text
+                        }
                     }
 
         }
