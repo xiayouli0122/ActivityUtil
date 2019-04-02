@@ -1,5 +1,6 @@
 package com.yuri.activity.lib
 
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 
@@ -35,6 +36,11 @@ interface Request {
     fun withStringArrayList(name: String, value: ArrayList<String>): Request
     fun withParcelableArrayList(name: String, value: ArrayList<Parcelable>): Request
     fun withBundle(bundle: Bundle): Request
+    fun addFlags(flags: Int): Request
+    fun setFlags(flags: Int): Request
+    fun setData(uri: Uri): Request
+    fun setDataAndType(uri: Uri, type: String): Request
+    fun setAction(action: String): Request
     fun requestCode(requestCode: Int): Request
     fun start()
     fun startResult(): Observable<ActivityResultInfo>

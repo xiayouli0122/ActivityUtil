@@ -56,7 +56,7 @@ publish {
     //项目名称
     artifactId = 'activity_util'
     //版本号
-    publishVersion = '1.0.3'
+    publishVersion = '1.0.4'
     //描述，不重要
     desc = '修改类名'
     //网站，不重要

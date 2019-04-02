@@ -1,6 +1,7 @@
 package com.yuri.activity.lib
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 
@@ -140,6 +141,31 @@ class DefaultRequest internal constructor(private val mTarget: Target) : Request
 
     override fun withParcelableArrayList(name: String, value: ArrayList<Parcelable>): Request {
         mIntent.putExtra(name, value)
+        return this
+    }
+
+    override fun addFlags(flags: Int): Request {
+        mIntent.addFlags(flags)
+        return this
+    }
+
+    override fun setFlags(flags: Int): Request {
+        mIntent.flags = flags
+        return this
+    }
+
+    override fun setData(uri: Uri): Request {
+        mIntent.data = uri
+        return this
+    }
+
+    override fun setDataAndType(uri: Uri, type: String): Request {
+        mIntent.setDataAndType(uri, type)
+        return this
+    }
+
+    override fun setAction(action: String): Request {
+        mIntent.action = action
         return this
     }
 
