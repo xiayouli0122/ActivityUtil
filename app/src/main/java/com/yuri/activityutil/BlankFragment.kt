@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.yuri.activity.lib.ActivityUtil
+import com.yuri.activity.lib.result.OnResultFilterFunc
+import com.yuri.xlog.XLog
 
 
 class BlankFragment : Fragment() {
@@ -33,11 +35,12 @@ class BlankFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button2)
                 .setOnClickListener {
-                    ActivityUtil.with(context!!)
+                    ActivityUtil.with(this)
                             .activity(TestActivity::class.java)
                             .startResult()
+                            .filter(OnResultFilterFunc())
                             .subscribe {
-                                
+                                XLog.d("123123123")
                             }
                 }
     }

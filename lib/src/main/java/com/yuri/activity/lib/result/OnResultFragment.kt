@@ -2,7 +2,6 @@ package com.yuri.activity.lib.result
 
 import android.app.Fragment
 import android.content.Intent
-import android.os.Bundle
 import android.util.SparseArray
 
 import io.reactivex.Observable
@@ -11,11 +10,6 @@ import io.reactivex.subjects.PublishSubject
 class OnResultFragment : Fragment() {
 
     private val mSubjects: SparseArray<PublishSubject<ActivityResultInfo>> = SparseArray()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        retainInstance = true
-    }
 
     fun startForResult(intent: Intent, requestCode: Int): Observable<ActivityResultInfo> {
         val subject = PublishSubject.create<ActivityResultInfo>()

@@ -32,9 +32,12 @@ class TestActivity : AppCompatActivity() {
             }
         }
 
-        val intent = Intent()
-        intent.putExtra("result", "TestActivity Result")
-        setResult(Activity.RESULT_OK, intent)
+        button.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("result", "TestActivity Result")
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
