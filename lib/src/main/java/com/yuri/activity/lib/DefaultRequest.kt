@@ -11,11 +11,17 @@ import io.reactivex.Observable
 import java.io.Serializable
 
 class DefaultRequest internal constructor(private val mTarget: Target) : Request {
-    private val mIntent: Intent = Intent()
+    private lateinit var mIntent: Intent
     private var mRequestCode = 0
 
     override fun activity(cls: Class<*>): Request {
+        mIntent = Intent()
         mIntent.setClass(mTarget.context, cls)
+        return this
+    }
+
+    override fun withIntent(intent: Intent): Request {
+        mIntent = intent
         return this
     }
 

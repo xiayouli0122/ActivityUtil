@@ -1,5 +1,6 @@
 package com.yuri.activity.lib
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
@@ -11,6 +12,7 @@ import java.io.Serializable
 
 interface Request {
     fun activity(cls: Class<*>): Request
+    fun withIntent(intent: Intent): Request
     fun withChar(name: String, value: Char): Request
     fun withCharArray(name: String, value: CharArray): Request
     fun withBoolean(name: String, value: Boolean): Request
