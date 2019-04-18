@@ -1,12 +1,23 @@
- [ ![Download](https://api.bintray.com/packages/yuri/maven/activity_util_x/images/download.svg) ](https://bintray.com/yuri/maven/activity_util_x/_latestVersion)
  
 # ActivityUtil
 ActivityUtil是一个封装Activity跳转的工具类
 
 # Gradle
+
+android support
+[ ![Download](https://api.bintray.com/packages/yuri/maven/activity_util/images/download.svg) ](https://bintray.com/yuri/maven/activity_util/_latestVersion)
 ```
 dependencies {
-    implementation 'com.yuri.activity:activity_util:1.0.6'
+    implementation 'com.yuri.activity:activity_util:<latestVersion>'
+    ...
+}
+```
+
+如果你在使用AndroidX，你可以使用下面的这个
+ [ ![Download](https://api.bintray.com/packages/yuri/maven/activity_util_x/images/download.svg) ](https://bintray.com/yuri/maven/activity_util_x/_latestVersion)
+```
+dependencies {
+    implementation 'com.yuri.activity:activity_util_x:<latestVersion>'
     ...
 }
 ```
