@@ -1,0 +1,39 @@
+package com.yuri.activity.lib
+
+import android.app.Activity
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+
+/**
+ * Activity启动封装
+ * Created by Yuri on 2016/5/19.
+ */
+object ActivityUtil {
+
+    fun with(activity: AppCompatActivity): DefaultRequest {
+        return DefaultRequest(ActivityCompatTarget(activity))
+    }
+
+    fun with(activity: Activity): DefaultRequest {
+        return DefaultRequest(ActivityTarget(activity))
+    }
+
+    fun with(context: Context): DefaultRequest {
+        return DefaultRequest(ContextTarget(context))
+    }
+
+    /**
+     * @param fragment android.app.Fragment
+     */
+    fun with(fragment: android.app.Fragment): DefaultRequest {
+        return DefaultRequest(FragmentTarget(fragment))
+    }
+
+    /**
+     * @param fragment android.support.v4.app.Fragment
+     */
+    fun with(fragment: Fragment): DefaultRequest {
+        return DefaultRequest(SupportFragmentTarget(fragment))
+    }
+}
