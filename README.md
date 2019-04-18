@@ -1,10 +1,12 @@
+ [ ![Download](https://api.bintray.com/packages/yuri/maven/activity_util_x/images/download.svg) ](https://bintray.com/yuri/maven/activity_util_x/_latestVersion)
+ 
 # ActivityUtil
 ActivityUtil是一个封装Activity跳转的工具类
 
 # Gradle
 ```
 dependencies {
-    implementation 'com.yuri.activity:activity_util:1.0.2'
+    implementation 'com.yuri.activity:activity_util:1.0.6'
     ...
 }
 ```
