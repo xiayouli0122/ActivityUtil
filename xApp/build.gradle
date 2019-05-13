@@ -33,6 +33,7 @@ dependencies {
 
     debugImplementation project(':xLib')
 //    releaseImplementation 'com.github.xiayouli0122:ActivityUtil:1.0.0'
+    implementation 'com.github.xiayouli0122:ActivityUtil:1.0.1'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
